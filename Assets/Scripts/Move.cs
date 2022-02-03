@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
 {
     private Rigidbody rigidbody;
     private AudioSource audioSource;
+    private Renderer renderer;
     public int hp = 100;
     public float speed;
     public float forceValue;
@@ -17,6 +18,7 @@ public class Move : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class Move : MonoBehaviour
             if(hp <= 0)
             {
                 print("RIP");
-                Renderer renderer = GetComponent<Renderer>();
+                
                 renderer.material.color = Color.black;
             }
         }
